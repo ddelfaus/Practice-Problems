@@ -1,6 +1,6 @@
 #plan
 # go through arr and check if it is below start
-#if it is below start then contiune going though arr untill it goes back at sea level
+#if it is below start then continue going though arr until it goes back at sea level
 #when it does incrase valley by 1
 
 
