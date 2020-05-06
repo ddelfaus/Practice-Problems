@@ -8,7 +8,9 @@
 def hourglassSum(arr):
     sums = []
     for r in range(len(arr)- 2):
+        print(r)
         for c in range(len(arr)-2):
+            
             hour_sum = 0
             hour_sum += arr[r][c] + arr[r][c + 1]+ arr[r][c + 2] + arr[r + 1][c + 1] + arr[r+2][c] + arr[r+2][c + 1] + arr[r + 2][c + 2]
 
