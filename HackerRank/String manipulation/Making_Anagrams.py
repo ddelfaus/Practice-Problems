@@ -1,26 +1,31 @@
     
-    def makeAnagram(a, b):
+    
+from collections import Counter 
+    
+    
+def makeAnagram(a, b):
     
     
     
     
     # make dictionaries from both strings 
-    c1 = Counter(a) 
-    c2 = Counter(b) 
-      
-    # finding the common elements from both dictonary 
-    common = c1&c2 
-    value = 0
-  
-    # adding up the key from common dictionary in order  
-    # to get the total number of common elements 
-    for key in common: 
-        value = value + common[key] 
-          
-    # returning the number of elements to be  
-    # removed to form an anagram 
-    return (len(a)-2*value+ len(b))          
-  
+        c1 = Counter(a) 
+        c2 = Counter(b) 
+        # print(c1)
+        # finding the common elements from both dictonary 
+        common = c1&c2 
+        print(common)
+        value = 0
+    
+        # adding up the key from common dictionary in order  
+        # to get the total number of common elements 
+        for key in common: 
+            value = value + common[key] 
+            
+        # returning the number of elements to be  
+        # removed to form an anagram 
+        return (len(a)-2*value+ len(b))          
+    
 
 
 
@@ -28,6 +33,7 @@
 
 
 
+print(makeAnagram("showman", "woman"))
 
 
 
@@ -39,31 +45,28 @@
 #if there is a match delete
 #count the length of both and add to gether to get delecitons 
 
-def makeAnagram(a, b):
+# def makeAnagram(a, b):
     
     
-    l1 = list(a)
+#     l1 = list(a)
  
-    l2 = list(b)
+#     l2 = list(b)
     
-    for letter in l1:
-        if letter in l2:
-            l1.remove(letter)
-            l2.remove(letter)
+#     for letter in l1:
+#         if letter in l2:
+#             l1.remove(letter)
+#             l2.remove(letter)
 
-    for letter2 in l2:
-        if letter2 in l1:
+#     for letter2 in l2:
+#         if letter2 in l1:
            
-            l1.remove(letter2)
-            l2.remove(letter2)
+#             l1.remove(letter2)
+#             l2.remove(letter2)
 
 
-    print(l1)
-    print(l2)
-    return len(l1) + len(l2)
-
-
-
+#     print(l1)
+#     print(l2)
+#     return len(l1) + len(l2)
 
 
 
@@ -73,7 +76,10 @@ def makeAnagram(a, b):
 
 
 
-print(makeAnagram("showman", "woman"))
+
+
+
+# print(makeAnagram("showman", "woman"))
 
 
 
