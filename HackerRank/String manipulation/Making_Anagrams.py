@@ -14,7 +14,7 @@ def makeAnagram(a, b):
         # print(c1)
         # finding the common elements from both dictonary 
         common = c1&c2 
-        print(common)
+        print(common, "common")
         value = 0
     
         # adding up the key from common dictionary in order  
@@ -24,16 +24,13 @@ def makeAnagram(a, b):
             
         # returning the number of elements to be  
         # removed to form an anagram 
+        print(value)
+        print(len(a)- 2*value, "waaa")
         return (len(a)-2*value+ len(b))          
     
 
 
-
-
-
-
-
-print(makeAnagram("showman", "woman"))
+print(makeAnagram("waaaaa", "waaaaas"))
 
 
 
