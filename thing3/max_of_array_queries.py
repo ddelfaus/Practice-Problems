@@ -19,21 +19,18 @@ def maxArrayQueries(n, queries):
 
     arr = [0]*n
     for query in queries:
-        print(query)
         arr[query[0] - 1] += query[2]
-        print(arr)
+
         if query[1] != len(arr):
-            print("this happened")
             arr[query[1]] -= query[2]
-    maxval = 0
+    max_val = 0
     i = 0
-    print(arr)
+
     for q in arr:
-        print(q, "num")
         i += q
-        if i > maxval:
-            maxval = i
-    return maxval
+        if i > max_val:
+            max_val = i
+    return max_val
 
 
 print(maxArrayQueries(10, [[1, 2, 100], [2, 3, 100],[3, 4, 100],[10, 10, 100],[10, 10, 100], [10, 10, 100]]))

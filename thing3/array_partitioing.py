@@ -15,23 +15,23 @@ def partitionArray(k, numbers):
     print(numbers)
     
 
-    # if len(numbers) % k != 0:
-    #     return False
+    if len(numbers) % k != 0:
+        return False
     freq = {}
     for i in numbers:
         freq[i] = freq.get(i,0) + 1
-        print(freq, "first")
+       
    
 
     #need to add to end to prevent false postivies
     freq[i] = freq.get(i,0) + 1
-    print(freq, "second")
+    # print(freq, "second")
 
-    print(freq.values())
+    # print(freq.values())
 
     # max_l = max_l =  max([j for j in freq.values()]) if numbers != [] else  0
     max_l = max([nums for nums in freq.values()])
-    print(max_l)
+    # print(max_l)
   
     if len(numbers) // k >= max_l:
         return True
@@ -40,4 +40,5 @@ def partitionArray(k, numbers):
 
 
 
-print(partitionArray(3, [1, 2, 3, 4]))
+print(partitionArray(2, [1, 2, 4,5]))
+
