@@ -38,7 +38,7 @@ class LinkedList:
             count += 1
             current = current.get_next()
 
-        return count
+        print(count)
 
 
     def search(self, value):
@@ -48,12 +48,12 @@ class LinkedList:
         while current and found is False:
             if current.get_data() == value:
                 found =True
-
+                print("found")
             else:
                 current = current.get_next()
         
         if current is None:
-            print("not in list")
+            print("not in list search")
 
 
 
@@ -70,13 +70,13 @@ class LinkedList:
                 previous = current
                 current = current.get_next()
 
-            if current is None:
-                print("not in list")
-
-            if previous is None:
-                self.head = current.get_next()
-            
-            else: previous.set_next(current.get.Next())
+        if current is None:
+            print("not in list delete")
+           
+        elif previous is None:
+            self.head = current.get_next()
+        
+        else: previous.set_next(current.get_next())
 
     def get_list(self):
         current = self.head
@@ -93,6 +93,14 @@ class LinkedList:
 
 
 
-new_list = LinkedList().insert(5)
+new_list = LinkedList()
 
-new_list.head.get_list()
+new_list.insert(5)
+new_list.insert(10)
+new_list.insert(15)
+new_list.search(10)
+new_list.delete(10)
+new_list.delete(10)
+new_list.search(10)
+new_list.get_list()
+new_list.size()
