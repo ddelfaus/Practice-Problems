@@ -64,3 +64,31 @@ print(url("the a f e   aea"))
 
 
 #1.4
+#Palindrome Permutation
+#get rid of spaces and lowercase everything
+#go through string a count and store each letter
+#need to use dict
+# at most only 1 letter can have an odd occurrence 
+#
+
+def pp(string):
+    new_string = string.replace (" ", "")
+    new_string = new_string.lower()
+
+    d = {}
+
+    for i in new_string:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+# check for 1 odd count
+    odd_count = 0
+    for k, v in d.items():
+        if v % 2 != 0 and odd_count == 0:
+            odd_count +=1 
+        elif v%2 !=0 and odd_count != 0:
+            return False
+    return True
+
+print(pp("dog godeers"))
