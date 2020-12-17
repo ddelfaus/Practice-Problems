@@ -126,6 +126,7 @@ def one(string1, string2):
     else:
         return False
 #
-
-
 print(one("effs", "dogs"))
+
+#1.6
+
