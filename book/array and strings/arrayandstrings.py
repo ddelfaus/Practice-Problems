@@ -130,3 +130,49 @@ print(one("effs", "dogs"))
 
 #1.6
 
+# String Compression: Implement a method to perform basic string compression using the counts
+# of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
+# "compressed" string would not become smaller than the original string, your method should return
+# the original string. You can assume the string has only uppercase and lowercase letters (
+
+
+#go through string and store the letter and a count with a object or dictnary 
+#if count greater than 1 return false
+
+def sc(string):
+
+    new_string = string.lower()
+    d= {}
+    return_string= True
+
+    for i in string:
+        if i in d:
+            d[i] += 1
+            return_string = False
+        else:
+            d[i] = 1
+
+    if return_string is True:
+        print(string)
+    else:
+        l = []
+        for key, value in d.items():
+            l.append(key)
+            if value > 1 :
+                l.append(str(value))
+
+        
+
+        l = ''.join(l)
+        print(l)
+        
+
+    
+
+  
+
+
+
+
+sc("tfeaweawwaefaweweafewaewfeawfaewwfaeweafewafewafweawaewaewefafewaefwafeawfewafeawewafewafeayyuuuipofdszfess")
+
