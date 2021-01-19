@@ -166,13 +166,20 @@ def sc(string):
         l = ''.join(l)
         print(l)
         
-
-    
-
-  
+sc("")
 
 
+#1.7
+# Given an image represented by an NxN matrix, where each pixel in the image is 4
+# bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
+def flip(matrix): 
+    n = len(matrix[0])
+        # transpose matrix
+        for i in range(n):
+            for j in range(i, n):
+                matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
 
-sc("tfeaweawwaefaweweafewaewfeawfaewwfaeweafewafewafweawaewaewefafewaefwafeawfewafeawewafewafeayyuuuipofdszfess")
-
+        # reverse each row
+        for i in range(n):
+            matrix[i].reverse()
