@@ -236,4 +236,26 @@ def zero(matrix):
     print(matrix)
 
 
-zero([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+# zero([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+
+#1.9
+# String Rotation:Assumeyou have a method isSubstringwhich checks if oneword is a substring
+# of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one
+# call to isSubstring (e.g., "waterbottle" is a rotation of"erbottlewat").
+
+#plan
+
+#stort each word and check if same
+
+def strroate(s1, s2):
+    string1 = ''.join(sorted(s1))
+    string2 = ''.join(sorted(s2))
+
+    if string1 == string2:
+        return True
+    else:
+        return False
+
+
+
+print(strroate("test","estt"))
