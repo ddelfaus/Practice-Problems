@@ -173,13 +173,67 @@ sc("")
 # Given an image represented by an NxN matrix, where each pixel in the image is 4
 # bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
+
+
+    #     # transpose matrix
+    #     for i in range(n):
+    #         for j in range(i, n):
+    #             matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+
+    #     # reverse each row
+    #     for i in range(n):
+    #         matrix[i].reverse()
+
 def flip(matrix): 
     n = len(matrix[0])
-        # transpose matrix
-        for i in range(n):
-            for j in range(i, n):
-                matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+    for r in range(n):
+        print(r, "row")
+        for c in range(r, n):
+            print(c, "col")
+            matrix[c][r], matrix[r][c] = matrix[r][c], matrix[c][r]
+            
 
-        # reverse each row
-        for i in range(n):
-            matrix[i].reverse()
+    for r in range(n):
+        matrix[r].reverse()
+    
+
+
+# flip([[1,2,3],[4,5,6],[7,8,9]])
+
+
+
+# 1.8 zero matrix Write an algorithm such that if an element in an MxN matrix is 0, its entire row and
+# column are set to 0. 
+
+# go through matrix and if element = o then set the row and col to zero
+# use matrix traversal 
+# check for 0
+# if 0 than set mark in a set
+
+
+
+def zero(matrix): 
+    print(matrix)
+    R = len(matrix)
+    C = len(matrix[0])
+    #create a place to store marks
+    rows = []
+    cols = []
+    #loop through and mark
+    for r in range(R):
+        for c in range(C):
+            if matrix[r][c] == 0:
+                rows.append(r)
+                cols.append(c)
+
+    #set matrix to zero if mark
+    for r in range(R):
+        for c in range(C):
+            if r in rows or c in cols:
+                matrix[r][c] = 0
+
+
+    print(matrix)
+
+
+zero([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
