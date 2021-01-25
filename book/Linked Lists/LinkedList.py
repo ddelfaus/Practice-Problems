@@ -15,9 +15,9 @@ class Node:
         self.next = value
 
 class LinkedList:
-    def __init__(self, head =None):
+    def __init__(self,head =None, ):
         self.head = head
-
+  
     def get_head(self):
         return self.head
     def insert_as_new_head(self, value):
@@ -38,6 +38,7 @@ class LinkedList:
                 current = current.next
             
             current.next = new_node
+     
     def print_list(self):
 
         current =self.head
@@ -62,18 +63,37 @@ class LinkedList:
 
                 current = current.next
 
-    
+#2.2 return nth to end of single linked list
+
+# go through the list to the n and print values from n to last node 
+    #go through list
+    #keep track of length
+    #check 
+
+    def print_at_n_to_end(self,n):
+        current = self.head
+        count = 0
+
+        while current:
+            count +=1
+
+            if count >= n:
+                print(current.value)
+                current = current.next
+            else:
+                current = current.next
 
 
 
 new_list = LinkedList()
 new_list.insert(5)
-new_list.insert(5)
-new_list.insert(5)
+new_list.insert(2)
+new_list.insert(1)
 new_list.insert(10)
-new_list.insert(15)
-new_list.insert(15)
-new_list.insert(15)
-new_list.print_list()
-new_list.delete_dups()
-new_list.print_list()
+new_list.insert(13)
+new_list.insert(25)
+new_list.insert(35)
+# new_list.print_list()
+# new_list.delete_dups()
+
+new_list.print_at_n_to_end(4)
