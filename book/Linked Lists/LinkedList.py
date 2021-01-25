@@ -1,4 +1,4 @@
-
+import math
 # 2.1 R�mov� Dups! Write code to remove duplicates from an unsorted linked list.
 #plan store each node value in a list if in list already remove it
 
@@ -42,11 +42,11 @@ class LinkedList:
     def print_list(self):
 
         current =self.head
-
+        print("start")
         while current:
             print(current.value)
             current = current.next
-
+        print("end")
     
     def delete_dups(self):
         current = self.head
@@ -73,7 +73,7 @@ class LinkedList:
     def print_at_n_to_end(self,n):
         current = self.head
         count = 0
-
+       
         while current:
             count +=1
 
@@ -83,17 +83,61 @@ class LinkedList:
             else:
                 current = current.next
 
+#2.3 delete the middle node
+    def delete_mid(self):
+    #get length of linked list
+        current = self.head
+        count = 0
+
+        while current:
+            count += 1
+            current = current.next
+
+        print(count)
+        if count <=2:
+            print("list too small")
+            return
+        #find midpoint and round up
+        midpoint = math.ceil(count/2)
+        print(midpoint)
+
+        #go through linked list again and remove the midpoint
+        current = self.head
+        count = 0
+
+        while current:
+            count +=1 
+            if count != midpoint:
+                
+                prev = current
+                current = current.next
+            
+            else:
+                prev.next = current.next
+                current = None
+    
+
+
+               
 
 
 new_list = LinkedList()
 new_list.insert(5)
 new_list.insert(2)
 new_list.insert(1)
-new_list.insert(10)
 new_list.insert(13)
 new_list.insert(25)
 new_list.insert(35)
 # new_list.print_list()
 # new_list.delete_dups()
+# new_list.print_at_n_to_end(4)
+new_list.print_list()
+new_list.delete_mid()
+new_list.delete_mid()
+new_list.delete_mid()
+new_list.delete_mid()
+new_list.delete_mid()
+new_list.delete_mid()
 
-new_list.print_at_n_to_end(4)
+new_list.print_list()
+
