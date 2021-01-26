@@ -117,9 +117,46 @@ class LinkedList:
                 current = None
     
 
+# 2.4 Partition: Write code to partition a linked list around a value x, such that all nodes less than x come
+# before all nodes greater than or equal to x. If x is contained within the list, the values of x only need
+# to be after the elements less than x (see below). The partition element x can appear anywhere in the
+# "right partition"; it does not need to appear between the left and right partitions.
 
-               
+#need two pointers and listnodes  using a dummy list
+#before head and after head
+#depening on x we add to each listnode
+#combine them
+   
+   
+    def partx(self,head, x):
+        # before and after are the two pointers used to create two list
+        # before_head and after_head are used to save the heads of the two lists.
+        # All of these are initialized with the dummy nodes created.
+        before = before_head = Node(0)
+        after = after_head = Node(0)
 
+        while head:
+            # If the original list node is lesser than the given x,
+            # assign it to the before list.
+            if head.val < x:
+                before.next = head
+                before = before.next
+            else:
+                # If the original list node is greater or equal to the given x,
+                # assign it to the after list.
+                after.next = head
+                after = after.next
+
+            # move ahead in the original list
+            head = head.next
+
+        # Last node of "after" list would also be ending node of the reformed list
+        after.next = None
+        # Once all the nodes are correctly assigned to the two lists,
+        # combine them to form a single list which would be returned.
+        before.next = after_head.next
+
+        return before_head.next
 
 new_list = LinkedList()
 new_list.insert(5)
@@ -133,11 +170,7 @@ new_list.insert(35)
 # new_list.print_at_n_to_end(4)
 new_list.print_list()
 new_list.delete_mid()
-new_list.delete_mid()
-new_list.delete_mid()
-new_list.delete_mid()
-new_list.delete_mid()
-new_list.delete_mid()
+new_list.partx(3)
 
-new_list.print_list()
+
 
