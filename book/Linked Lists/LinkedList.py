@@ -127,7 +127,7 @@ class LinkedList:
 #depening on x we add to each listnode
 #combine them
    
-   
+#    *****
     def partx(self,head, x):
         # before and after are the two pointers used to create two list
         # before_head and after_head are used to save the heads of the two lists.
@@ -158,6 +158,44 @@ class LinkedList:
 
         return before_head.next
 
+
+
+# 2.5 You have two numbers represented by a linked list, where each node contains a single
+# digit. The digits are stored in reverse order, such that the 1 's digit is at the head of the list. Write a
+# function that adds the two numbers and returns the sum as a linked list.
+
+#go through first node list and the second one with 2 while loops
+#add values of each and the go to next node
+#add a carry varible to carry over
+
+def sum(self,x, y)
+   
+        result = ListNode(0)
+        result_head = result
+        
+        y = l2.val
+        xy = []
+        carry = 0
+        while l1 and l2:
+            x = l1.val
+            y = l2.val
+            total = x + y
+            if carry == 1:
+                total += 1
+                
+            if total >= 10:
+                carry = 1
+                total = 0
+            else:
+                carry = 0
+            
+            result_head.next = ListNode(total)
+            result_head = result_head.next
+        
+            l1 = l1.next
+            l2 = l2.next
+        return result.next
+         
 new_list = LinkedList()
 new_list.insert(5)
 new_list.insert(2)
@@ -170,7 +208,7 @@ new_list.insert(35)
 # new_list.print_at_n_to_end(4)
 new_list.print_list()
 new_list.delete_mid()
-new_list.partx(3)
+
 
 
 
