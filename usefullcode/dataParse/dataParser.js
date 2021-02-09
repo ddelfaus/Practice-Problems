@@ -67,3 +67,24 @@ return (
 )
 }
 
+
+
+const dataArray = []
+const options = {
+    chart: {
+        type: 'candlestick',
+        height: 350,
+        animations: {
+            enabled: false
+        }
+      },
+
+      series: [{
+        data: dataArray
+          
+      }],
+      xaxis: {
+        type: 'datetime'
+      }
+
+}
