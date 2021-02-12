@@ -88,3 +88,31 @@ const options = {
       }
 
 }
+
+const dataArray =[]
+const [loading, setLoading] = useState(true)
+const [stockData, setStockData] = useState([])
+const [stockArray, setStockArray] = useState([])
+useEffect(() => {
+    
+    axios
+    .get(``)
+    .then(res =>{
+        setStockData(res.data)
+        
+      
+        
+      return(stockData)
+    }).then((res)=>{
+        
+        parseData(res,dataArray)
+     
+
+       return(setLoading(false))
+        
+    })  
+    .catch(err => {
+        console.log("There was an error, ", err)
+    })
+   
+}, [loading]);
