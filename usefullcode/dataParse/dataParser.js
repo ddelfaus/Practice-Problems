@@ -116,3 +116,38 @@ useEffect(() => {
     })
    
 }, [loading]);
+
+
+},[])
+console.log(props)
+const options = {
+    alignLabels: true,
+    // localization: {
+    //     timeFormatter: function(TimeStamp) {
+            
+    //             return Date(TimeStamp)
+          
+    //     }
+    // },
+    timeScale: {
+      rightOffset: 12,
+      barSpacing: 3,
+      fixLeftEdge: true,
+      lockVisibleTimeRangeOnResize: false,
+      rightBarStaysOnScroll: true,
+      borderVisible: false,
+      borderColor: "#fff000",
+      visible: true,
+      timeVisible: true,
+      secondsVisible: false,
+    //   tickMarkFormatter: (time, TickMarkType, locale => {
+    //       console.log(time, TickMarkType, locale)
+    //       const intraDay = LightweightCharts.isBusinessDay(time) ? time.intraDay
+    //   })
+    }
+}
+const candlestickSeries = [{
+        data: props.dataArray
+
+      }]
+    
